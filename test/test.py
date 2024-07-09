@@ -3,7 +3,7 @@ import requests
 import unittest
 import uuid
 
-PAYLOAD = {'name': 'test' + str(uuid.uuid4())}
+PAYLOAD = {'name': f"test_{str(uuid.uuid4())}"}
 HEADERS = {'accept': 'application/json'}
 
 

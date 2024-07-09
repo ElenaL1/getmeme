@@ -37,7 +37,7 @@ async def get_meme(
     meme_id: int,
     session: AsyncSession = Depends(get_async_session)
 ):
-    meme = await get_meme_by_id(meme_id, session)
+    meme = await check_meme_exists(meme_id, session)
     try:
         async with AsyncClient() as client:
             response = await client.get(
